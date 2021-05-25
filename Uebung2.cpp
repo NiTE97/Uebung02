@@ -1,3 +1,8 @@
+/**
+ * @Author BBauer(3533735), NTerwort(3813622) 
+ *
+ */
+
 #include <stdio.h>
 #include <iostream>
 #include "Uebung2.h"

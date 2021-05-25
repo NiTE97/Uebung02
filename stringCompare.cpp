@@ -1,3 +1,8 @@
+/**
+ * Author Benjamin Bauer (3533735), Niklas )
+ *
+ */
+
 #include <stdio.h>
 #include <iostream>
 #include <cstring>
