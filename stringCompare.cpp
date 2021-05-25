@@ -5,19 +5,18 @@
 
 using namespace std;
 
-char * entferneWhitespaces(char * str){
-	char * cleanStr = new char[80];
-	char c;
-	int temp = 0;
+static void removeSpaces (char *str){
+	char * src = str;
+	char * dst = src;
 
-	for (int i = 0; i < strlen(str); ++i){
-		c = str[i];
-		if(c != ' ' && c != '\t' && c != '\n'){
-			cleanStr[temp]= c;
-			temp++;
+	while (*src != '\0'){
+		if (*src != ' ' && *src != '\t' && *src != '\n'){
+			*dst++ = *src;
 		}
+		src++;
 	}
-	return cleanStr;
+	*dst = '\0';
+	
 }
 
 int vergleicheBuchstaben(char * str1, char * str2){
@@ -26,28 +25,34 @@ int vergleicheBuchstaben(char * str1, char * str2){
 
 	size_t lengthStr1 = strlen(str1);
 	size_t lengthStr2 = strlen(str2);
+	int max = -1;
 
-	if(lengthStr1 != lengthStr2){
-		return lengthStr1 > lengthStr2 ? 1 : -1;
+	if (lengthStr1 > lengthStr2){
+		max = lengthStr1;
+	} else {
+		max = lengthStr2;
 	}
 	
-	for (int i = 0; i < strlen(str1); ++i){
+	for (int i = 0; i < max; ++i){
 		c1 = *str1;
 		c2 = *str2;
-
+		
 		if(c1 > c2){
 			return 1;
 		} else if (c1 < c2){
 			return -1;
-		} 
+		} else {
+		++str1;
+       		++str2;
+		}
 	}
 	return 0;
 }
 
-int buchstabenMain(char * str1, char * str2)
+int stringCompareMain(char * str1, char * str2)
 {
-	str1 = entferneWhitespaces(str1);
-	str2 = entferneWhitespaces(str2);
+	removeSpaces(str1);
+	removeSpaces(str2);
 	
 	std::cout << vergleicheBuchstaben(str1, str2) << std::endl;
 	

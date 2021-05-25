@@ -33,14 +33,3 @@ int zaehleWoerter(char *str){
 	return count;
 }
 
-int woerterMain()
-{
-	char str[80];
-
-	std::cout << "String eingeben: " << std::endl;
-	cin.getline(str, sizeof(str));
-	std::cout << str << std::endl;
-	std::cout << "Ergebnis: " << zaehleWoerter(str);
-
-	return 0;
-}

@@ -6,36 +6,43 @@ using namespace std;
 void buchstaben(){
 	char str[80];
 
-	std::cout << "String eingeben:" << std::endl;
+	printf("String eingeben:");
+	cin.clear();
+	cin.sync();
 	cin.getline(str, sizeof(str));
-	std::cout << "Ergebnis: " << zaehleWoerter(str);
+	printf("Ergebnis: %d", zaehleWoerter(str));
 }
 
-void woerter(){
+void compString(){
 	char * str1 = new char[80];
 	char * str2 = new char[80];
 
-	std::cout << "Bitte String 1 eingeben;" << std::endl;
+	printf("Bitte String 1 eingeben:\n");
+	cin.clear();
+	cin.sync();
 	cin.getline(str1, sizeof(str1));
-	std::cout << "Bitte String 2 eingeben" << std::endl;
+	printf("Bitte String 2 eingeben:\n");
+	cin.clear();
+	cin.sync();
 	cin.getline(str2, sizeof(str2));
 	
-	buchstabenMain(str1, str2);
+	stringCompareMain(str1, str2);
 	
 }
 
 int main()
 {
 	int choice = -1;
-	std::cout << "Bitte wählen Sie eine der Funktionen\n1: Wörter zählen\n2: Strings vergleichen\n=>" << std::endl;
+	printf("Bitte wählen Sie eine der Funktionen\n1: Wörter zählen\n2: Strings vergleichen\n=>"); 
 	cin >> choice;
+	cin.ignore();
 
 	switch (choice) {
 		case 1:
-			woerter();			
+			buchstaben();			
 			break;
 		case 2:
-			buchstaben();		
+			compString();		
 			break;
 		default:
 			std::cout << "Diese Möglichkeit existiert nicht!" << std::endl;
