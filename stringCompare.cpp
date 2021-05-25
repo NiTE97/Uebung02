@@ -54,7 +54,7 @@ int stringCompareMain(char * str1, char * str2)
 	removeSpaces(str1);
 	removeSpaces(str2);
 	
-	std::cout << vergleicheBuchstaben(str1, str2) << std::endl;
-	
+	cout << vergleicheBuchstaben(str1, str2) << endl;
+
 	return 0;
 }

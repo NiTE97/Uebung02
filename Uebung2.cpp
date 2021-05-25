@@ -45,7 +45,7 @@ int main()
 			compString();		
 			break;
 		default:
-			std::cout << "Diese Möglichkeit existiert nicht!" << std::endl;
+			cout << "Diese Möglichkeit existiert nicht!" << endl;
 	}
 
 	return 0;
